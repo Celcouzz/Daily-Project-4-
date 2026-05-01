@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni UMM Tracking - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body data-page="login" class="login-page">
+    <section class="login-hero">
+        <div class="brand">
+            <div class="brand-mark">UMM</div>
+            <div>
+                <div class="brand-title">AlumniTrack</div>
+                <div class="brand-subtitle">UMM Alumni Monitoring</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;">
+            <p class="eyebrow" style="color: var(--primary); font-weight: 800; letter-spacing: 2px;">SISTEM PELACAKAN ALUMNI</p>
+            <h1 style="margin-top: 10px; line-height: 1.2;">Kelola data lulusan UMM dengan presisi dan efisiensi.</h1>
+            <p style="margin-top: 24px; font-size: 1.1rem; color: var(--text-muted); max-width: 500px;">Akses dashboard monitoring untuk melacak status alumni, validasi data, dan laporan statistik dalam satu platform terintegrasi.</p>
+        </div>
+    </section>
+
+    <section class="login-card-wrapper">
+        <div class="login-card">
+            <div style="margin-bottom: 40px;">
+                <p class="eyebrow">AKSES ADMINISTRATOR</p>
+                <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--accent); margin-top: 5px;">Masuk ke Dashboard</h2>
+            </div>
+
+            <form id="loginForm" class="auth-grid">
+                <label>
+                    <span>Username</span>
+                    <input id="username" type="text" placeholder="Masukkan username" autocomplete="username">
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input id="password" type="password" placeholder="••••••••" autocomplete="current-password">
+                </label>
+            </form>
+
+            <div class="login-actions">
+                <button class="primary-button" id="loginButton" type="button">Masuk Sekarang</button>
+                <p id="authMessage" class="auth-message" style="margin-top: 24px; color: var(--text-muted); font-size: 0.85rem; text-align: center;">
+                    Gunakan kredensial <strong>admin</strong> / <strong>umm123</strong> untuk demo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="public/js/config.js"></script>
+    <script src="public/js/script.js"></script>
+</body>
+
+</html>

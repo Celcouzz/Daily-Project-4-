@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni UMM Tracking - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body data-page="dashboard">
+    <div class="page-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">UMM</div>
+                <div>
+                    <div class="brand-title">AlumniTrack</div>
+                    <div class="brand-subtitle">UMM Alumni Monitoring</div>
+                </div>
+            </div>
+
+            <div class="sidebar-badge">Administrator</div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item active" href="#alumni-data">Data Alumni</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Sistem Pelacakan Lulusan</p>
+                    <h1>Manajemen Alumni</h1>
+                </div>
+                <button class="ghost-button" id="logoutButton" type="button">Keluar</button>
+            </header>
+
+            <div id="alumni-data-section" class="page-section active">
+                <!-- Stats Summary Row -->
+                <section class="stats-grid" id="summary">
+                    <article class="stat-card accent-blue">
+                        <div class="stat-header"><span>👥 Total Alumni</span></div>
+                        <strong id="totalCount">142.293</strong>
+                        <small>Seluruh database alumni</small>
+                    </article>
+                    <article class="stat-card accent-green">
+                        <div class="stat-header"><span>✅ Sudah Terlacak</span></div>
+                        <strong id="trackedCount">1.597</strong>
+                        <small>Data tervalidasi</small>
+                    </article>
+                    <article class="stat-card accent-amber">
+                        <div class="stat-header"><span>🔍 Belum Terlacak</span></div>
+                        <strong id="untrackedCount">140.696</strong>
+                        <small>Perlu pengecekan</small>
+                    </article>
+                    <article class="stat-card accent-slate">
+                        <div class="stat-header"><span>📄 Sudah Validasi</span></div>
+                        <strong id="validatedCount">1.597</strong>
+                        <small>Sudah masuk database</small>
+                    </article>
+                </section>
+
+                <section class="panel table-panel">
+                    <div class="panel-heading compact">
+                        <div>
+                            <p class="eyebrow">Data Alumni</p>
+                            <h2>Pencarian & Manajemen</h2>
+                        </div>
+                        <div class="panel-actions">
+                            <span class="pill success">Terverifikasi</span>
+                            <button class="ghost-button small-button" id="refreshButton" type="button">Refresh
+                                Data</button>
+                        </div>
+                    </div>
+
+                    <div class="table-toolbar">
+                        <input class="search-input" id="combinedSearch" type="search"
+                            placeholder="Cari nama, NIM, prodi, status...">
+                        <select class="filter-select" id="statusFilter">
+                            <option value="">Semua status</option>
+                        </select>
+                        <select class="filter-select" id="yearFilter">
+                            <option value="">Semua tahun masuk</option>
+                        </select>
+                        <select class="filter-select" id="validationFilter">
+                            <option value="">Semua data</option>
+                            <option value="valid">Sudah validasi</option>
+                            <option value="belum valid">Data belum valid</option>
+                        </select>
+                    </div>
+
+
+                    <div class="table-wrap">
+                        <table class="data-table" id="combinedTable">
+                            <thead>
+                                <tr>
+                                    <th>Nama Lulusan</th>
+                                    <th>NIM</th>
+                                    <th>Tahun Masuk</th>
+                                    <th>Tanggal Lulus</th>
+                                    <th>Program Studi</th>
+                                    <th>Status Pencarian</th>
+                                    <th class="text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer">
+                        <div class="table-info" id="pageInfo">Memuat data...</div>
+                        <div class="table-pager">
+                            <button class="ghost-button small-button" id="prevPageButton"
+                                type="button">Sebelumnya</button>
+                            <button class="ghost-button small-button" id="nextPageButton"
+                                type="button">Berikutnya</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <div class="auth-overlay hidden" id="sessionOverlay">
+        <section class="auth-card compact-auth">
+            <p class="eyebrow">Akses Dashboard</p>
+            <h2>Session login belum aktif</h2>
+            <p class="lead">Silakan login dan unggah Excel dari halaman login untuk membuka dashboard.</p>
+            <a class="primary-button center-button" href="index.html">Ke Halaman Login</a>
+        </section>
+    </div>
+
+    <div class="modal-overlay hidden" id="detailModal">
+        <div class="modal-card">
+            <header class="modal-header">
+                <h2 id="modalTitle">Detail Alumni</h2>
+                <button class="close-modal" id="closeModal" type="button">&times;</button>
+            </header>
+            <div class="modal-content">
+                <div class="detail-grid" id="modalGrid">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/js/config.js"></script>
+    <script src="public/js/script.js"></script>
+</body>
+
+</html>
+<link href='https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap' rel='stylesheet'>
